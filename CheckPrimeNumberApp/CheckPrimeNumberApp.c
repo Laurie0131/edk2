@@ -19,6 +19,8 @@
 
 #include <Library/BaseMemoryLib.h>
 
+#define CHAR_ZERO  0x0030    // '0' in Unicode
+#define CHAR_NINE  0x0039    // '0' in Unicode
 
 //EFI_STATUS
 //EFIAPI
@@ -42,6 +44,34 @@ ReadKeyPress(
 	gST->ConIn->ReadKeyStroke(gST->ConIn, TheKey);
 	return EFI_SUCCESS;
 }
+
+UINTN
+GetNumber(
+)
+{
+	UINTN			Number;
+	UINTN			TempNumber;
+	EFI_INPUT_KEY	Key;
+	EFI_STATUS      Status;
+//	BOOLEAN			ExitLoop = FALSE;
+
+	ZeroMem(&Key, sizeof(EFI_INPUT_KEY));
+	Number = 0;
+
+	do {    // Do loop until  "enter" key
+		Status = ReadKeyPress(&Key);
+		Print(L"%c", Key.UnicodeChar);
+		TempNumber = (UINTN)Key.UnicodeChar;
+		if (TempNumber >= CHAR_ZERO && 
+			TempNumber <= CHAR_NINE) {
+			Number = (Number*10) + (TempNumber - 0x30);
+		}
+	} while (!(	Key.UnicodeChar == CHAR_CARRIAGE_RETURN) );
+
+	
+	return Number;
+}
+
 
 BOOLEAN IsPrimeCheck(
 	IN UINTN Number
@@ -76,21 +106,25 @@ UefiMain (
   )
 {
 	UINTN Number;
-	EFI_INPUT_KEY  Key;
-	EFI_STATUS      Status;
-	Status = EFI_UNSUPPORTED;  // or any other EFI Error 
+//	EFI_INPUT_KEY  Key;
+//	EFI_STATUS      Status;
+//	Status = EFI_UNSUPPORTED;  // or any other EFI Error 
 
 	DEBUG((EFI_D_INFO, "\r\n>>>>>[UefiMain] Entry point: 0x%p <<<<<<\r\n", UefiMain));
-	ZeroMem(&Key, sizeof(EFI_INPUT_KEY));
+//	ZeroMem(&Key, sizeof(EFI_INPUT_KEY));
 
-	Print(L"\nPress any Key to continue : \n");
+//	Print(L"\nEnter a Dec number to check if prime: \n");
 	//Status = WaitForKeyPress();
-	Status = ReadKeyPress(&Key);
-	Print(L"The Key you pressed was:\n "); //
+//	Status = ReadKeyPress(&Key);
+//	Print(L"The Key you pressed was:\n "); //
 
-	Number = (UINTN)Key.UnicodeChar;
-	Print(L"%c the Hex is: %x the Dec is: %d\n", Key.UnicodeChar, Number, Number);
+//	Number = (UINTN)Key.UnicodeChar;
+//	Print(L"%c the Hex is: %x the Dec is: %d\n", Key.UnicodeChar, Number, Number);
 
+	Print(L"\nEnter a Dec number to check if prime: \n");
+
+	Number = GetNumber();
+	Print(L"\nHex is: %x the Dec is: %d\n", Number, Number);
 	
 	// check if the Number is Prime
 	if (IsPrimeCheck(Number) ) {
@@ -100,7 +134,7 @@ UefiMain (
 		Print(L"The number %d is Not prime", Number);
 	}
 
-	Print(L"\n");
+	Print(L"\nDONE\n");
 
 
 	return EFI_SUCCESS;
