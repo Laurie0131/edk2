@@ -1,0 +1,36 @@
+## @file
+# Sample UnitTest built for execution on a Host/Dev machine.
+#
+# Copyright (c) Microsoft Corporation.<BR>
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = CheckNumberPlusOneUnitTestPei
+  FILE_GUID      = B959F0E1-C26B-40BE-90C1-C61BD5AE06E3
+  MODULE_TYPE    = PEIM
+  VERSION_STRING = 1.0
+  ENTRY_POINT    = PeiEntryPoint
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  CheckNumberPlusOneUnitTest.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  PeimEntryPoint
+  BaseLib
+  DebugLib
+  UnitTestLib
+  PrintLib
+
+[Depex]
+  gEfiPeiMemoryDiscoveredPpiGuid
