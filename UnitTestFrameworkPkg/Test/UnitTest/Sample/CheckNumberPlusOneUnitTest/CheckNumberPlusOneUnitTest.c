@@ -6,35 +6,11 @@
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
 **/
-#include <PiPei.h>
-#include <Uefi.h>
-#include <Library/UefiLib.h>
-#include <Library/DebugLib.h>
-#include <Library/UnitTestLib.h>
-#include <Library/PrintLib.h>
+
+#include "CheckNumberPlusOneUnitTest.h"
 
 #define UNIT_TEST_NAME     "Sample Check Number Plus One Unit Test"
 #define UNIT_TEST_VERSION  "0.1"
-
-
-
-/**
-  Super Sample FUNCTION TO TEST
-  @param[in]  Number    Unsigned invalue  if < 100
-  @retval		2		Return Number+1 if Number < 100
-  @retval       0		if Number >= 100
-  **/
-UINTN NumberPlusOne(
-	IN UINTN Number
-)
-{
-	UINTN	ReturnNumber = 0;
-	if (Number < 100) {
-		ReturnNumber = Number + 1;
-	}
-	return (ReturnNumber);  // 1 + 1
-}
-
 
 
 /**OnePlusOne
@@ -127,7 +103,7 @@ IsNumberCorrect(
 	// Check for is 2 condition 
 	RetNumber = NumberPlusOne(1);
 	UT_LOG_INFO("Number is:   1 returned was (%d)\n", RetNumber);
-	UT_ASSERT_EQUAL(RetNumber, 2);
+	UT_ASSERT_EQUAL(RetNumber, 0);
 
 	return UNIT_TEST_PASSED;
 }

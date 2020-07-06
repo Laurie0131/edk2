@@ -21,6 +21,10 @@
 
 [Sources]
   CheckNumberPlusOneUnitTest.c
+  CheckNumberPlusOneUnitTest.h
+  NumberPlusOne.c
+
+
 
 [Packages]
   MdePkg/MdePkg.dec

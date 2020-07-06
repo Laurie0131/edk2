@@ -214,7 +214,7 @@
 
   # For a CD-ROM/DVD use L"diag.dmg:RO:2048"
   gEmulatorPkgTokenSpaceGuid.PcdEmuVirtualDisk|L"disk.dmg:FW"
-  gEmulatorPkgTokenSpaceGuid.PcdEmuGop|L"GOP Window"
+  gEmulatorPkgTokenSpaceGuid.PcdEmuGop|L"GOP Window 1!GOP Window 2"
   gEmulatorPkgTokenSpaceGuid.PcdEmuFileSystem|L"."
   gEmulatorPkgTokenSpaceGuid.PcdEmuSerialPort|L"/dev/ttyS0"
   gEmulatorPkgTokenSpaceGuid.PcdEmuNetworkInterface|L"en0"
@@ -412,6 +412,33 @@
 !endif
 
 !include NetworkPkg/Network.dsc.inc
+
+ 
+
+  UnitTestFrameworkPkg/Test/UnitTest/Sample/CheckNumberPlusOneUnitTest/CheckNumberPlusOneUnitTestUefiShell.inf{
+    <LibraryClasses>
+  	UnitTestLib|UnitTestFrameworkPkg/Library/UnitTestLib/UnitTestLib.inf
+  	UnitTestPersistenceLib|UnitTestFrameworkPkg/Library/UnitTestPersistenceLibNull/UnitTestPersistenceLibNull.inf
+        UnitTestResultReportLib|UnitTestFrameworkPkg/Library/UnitTestResultReportLib/UnitTestResultReportLibConOut.inf
+#        UnitTestResultReportLib|UnitTestFrameworkPkg/Library/UnitTestResultReportLib/UnitTestResultReportLibDebugLib.inf
+
+
+  <PcdsFixedAtBuild>
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x17
+}
+
+  UnitTestFrameworkPkg/Test/UnitTest/Sample/CheckNumberPlusOneUnitTest/CheckNumberPlusOneUnitTestDxe.inf{
+    <LibraryClasses>
+  	UnitTestLib|UnitTestFrameworkPkg/Library/UnitTestLib/UnitTestLib.inf
+  	UnitTestPersistenceLib|UnitTestFrameworkPkg/Library/UnitTestPersistenceLibNull/UnitTestPersistenceLibNull.inf
+        UnitTestResultReportLib|UnitTestFrameworkPkg/Library/UnitTestResultReportLib/UnitTestResultReportLibDebugLib.inf
+
+
+  <PcdsFixedAtBuild>
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x17
+}
+
+
 
 [BuildOptions]
   #
