@@ -1,0 +1,36 @@
+## @file
+# Sample UnitTest built for execution on a Host/Dev machine.
+#
+# Copyright (c) Microsoft Corporation.<BR>
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = CheckNumberPlusOneUnitTestDxe
+  FILE_GUID      = C62ED0B7-261F-4BEF-B46C-937CD8907338
+  MODULE_TYPE    = DXE_DRIVER
+  VERSION_STRING = 1.0
+  ENTRY_POINT    = DxeEntryPoint
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  CheckNumberPlusOneUnitTest.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  BaseLib
+  DebugLib
+  UnitTestLib
+  PrintLib
+
+[Depex]
+  TRUE
