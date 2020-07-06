@@ -103,7 +103,7 @@ IsNumberCorrect(
 	// Check for is 2 condition 
 	RetNumber = NumberPlusOne(1);
 	UT_LOG_INFO("Number is:   1 returned was (%d)\n", RetNumber);
-	UT_ASSERT_EQUAL(RetNumber, 0);
+	UT_ASSERT_EQUAL(RetNumber, 2);
 
 	return UNIT_TEST_PASSED;
 }
