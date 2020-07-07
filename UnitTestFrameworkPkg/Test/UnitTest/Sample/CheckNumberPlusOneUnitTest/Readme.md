@@ -107,8 +107,7 @@ Where:
 
 5. Build and run as above
 ```shell
-$ build -b NOOPT -t VS2015x86 -a X64 -p 
-UnitTestFrameworkPkg\Test\UnitTestFrameworkPkgHostTest.dsc 
+$ build -b NOOPT -t VS2015x86 -a X64 -p UnitTestFrameworkPkg\Test\UnitTestFrameworkPkgHostTest.dsc 
 ```
 6. Run the Host Unit Test 
 ```
