@@ -74,7 +74,7 @@ Log Output End
     * Within the test function use the `UT_ASSERT*()` Unit Test Library calls to determine if each test returns or produces the desired outcome.
     * Within the test function if all values returned and prduced are correct, return the value of `UNIT_TEST_PASSED`  
     * Example:
-```
+```c++
 UNIT_TEST_STATUS
 EFIAPI
 MyTestCase1(
@@ -93,15 +93,29 @@ MyTestCase1(
 AddTestCase (SuiteHandle, “Test Description", “short.name", MyTestCase1, NULL, NULL, NULL);
 
 Where:
- SuiteHandle		UNIT_TEST_SUITE_HANDLE (same as Create for Suite) 
- “Test Description”	User friendly ASCII String for Test Case Description
- “Test.Name”		User friendly ASCII String for Test Case Name (no spaces)
- MyTestCase1	    Unit Test Function
- NULL				Optional Prerequisite Function runs before test function
- NULL				Optional Clean-up Function runs after test function
- NULL				UNIT_TEST_CONTEXT - Optional Pointer to Context 
+ SuiteHandle        UNIT_TEST_SUITE_HANDLE (same as Create for Suite) 
+ “Test Description” User friendly ASCII String for Test Case Description
+ “Test.Name”        User friendly ASCII String for Test Case Name (no spaces)
+ MyTestCase1        Unit Test Function
+ NULL               Optional Prerequisite Function runs before test function
+ NULL               Optional Clean-up Function runs after test function
+ NULL               UNIT_TEST_CONTEXT - Optional Pointer to Context 
 ```
 3. Use the [`CheckNumberPlusOneUnitTest.h`](https://github.com/Laurie0131/edk2/blob/LJ_UnitTest2/UnitTestFrameworkPkg/Test/UnitTest/Sample/CheckNumberPlusOneUnitTest/CheckNumberPlusOneUnitTest.h) file to add your prototype for your function to test and any other `#include` statements required for your function.
+
+4. Update the Host Unit Test INF file [`CheckNumberPlusOneUnitTest.inf`](https://github.com/Laurie0131/edk2/blob/LJ_UnitTest2/UnitTestFrameworkPkg/Test/UnitTest/Sample/CheckNumberPlusOneUnitTest/CheckNumberPlusOneUnitTest.inf) with any files, GUIDs, PCDs or libraries added 
+
+5. Build and run as above
+```shell
+$ build -b NOOPT -t VS2015x86 -a X64 -p 
+UnitTestFrameworkPkg\Test\UnitTestFrameworkPkgHostTest.dsc 
+```
+6. Run the Host Unit Test 
+```
+:: FIRST CD to the BUILD Directory where unit test host .EXE was built.
+$ MyHostUnitTest.exe
+```
+
 
 
 
