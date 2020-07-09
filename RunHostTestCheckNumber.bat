@@ -1,5 +1,8 @@
 @echo off
 setlocal EnableDelayedExpansion EnableExtensions
+if "%WORKSPACE%"=="" (
+set WORKSPACE=%CD%
+)
 set exitCode=0
 set EXE_BUILD_DIR=""
 if /i "%~1"=="/?" goto Usage
