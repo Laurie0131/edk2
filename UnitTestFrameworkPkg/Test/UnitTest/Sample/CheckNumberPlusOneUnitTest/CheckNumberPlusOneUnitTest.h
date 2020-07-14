@@ -2,7 +2,7 @@
   This is a sample to demostrate the usage of the Unit Test Library that
   supports the PEI, DXE, SMM, UEFI SHell, and host execution environments.
 
-  Copyright (c) Microsoft Corporation.<BR>
+   Copyright (c) Microsoft Corporation.<BR>
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
 **/

@@ -2,7 +2,7 @@
   This is a sample to demostrate the usage of the Unit Test Library that
   supports the PEI, DXE, SMM, UEFI SHell, and host execution environments.
 
-  Copyright (c) Microsoft Corporation.<BR>
+   Copyright (c) Microsoft Corporation.<BR>
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
 **/
@@ -155,7 +155,7 @@ UefiTestMain (
 
   AddTestCase (SimpleNumberTests, "Test IsNumberPlus1 -  produce 1+1=2", "Test-1", IsNumberPlus1, NULL, NULL, NULL);
   AddTestCase (SimpleNumberTests, "Test IsNumberNotPlus1 - Not produce number +1", "Test-2", IsNumberNotPlus1, NULL, NULL, NULL);
-  AddTestCase(SimpleNumberTests, "Test IsNumberCorrect w/ results in one test", "Test-3", IsNumberCorrect, NULL, NULL, NULL);
+  AddTestCase (SimpleNumberTests, "Test IsNumberCorrect w/ results in one test", "Test-3", IsNumberCorrect, NULL, NULL, NULL);
 
   //
   // Execute the tests.
