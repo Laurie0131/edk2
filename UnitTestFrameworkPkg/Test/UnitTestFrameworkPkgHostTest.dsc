@@ -26,6 +26,10 @@
   # Build HOST_APPLICATION that tests the SampleUnitTest
   #
   UnitTestFrameworkPkg/Test/UnitTest/Sample/SampleUnitTest/SampleUnitTestHost.inf
+  UnitTestFrameworkPkg/Test/UnitTest/Sample/CheckPrimeUnitTest/CheckPrimeUnitTestHost.inf
+  UnitTestFrameworkPkg/Test/UnitTest/Sample/ChefAppUnitTest/ChefAppUnitTestHost.inf
+  UnitTestFrameworkPkg/Test/UnitTest/Sample/CheckNumberPlusOneUnitTest/CheckNumberPlusOneUnitTestHost.inf
+
 
   #
   # Build HOST_APPLICATION Libraries

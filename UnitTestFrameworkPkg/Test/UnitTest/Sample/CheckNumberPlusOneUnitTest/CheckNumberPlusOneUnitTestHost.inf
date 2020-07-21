@@ -1,0 +1,34 @@
+## @file
+# Sample UnitTest built for execution on a Host/Dev machine.
+#
+# Copyright (c) Microsoft Corporation.<BR>
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = CheckNumberPlusOneUnitTestHost
+  FILE_GUID      = 3D81F46E-5A4F-48EE-BAE4-89ED3402D6B9
+  MODULE_TYPE    = HOST_APPLICATION
+  VERSION_STRING = 1.0
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  CheckNumberPlusOneUnitTest.c
+  CheckNumberPlusOneUnitTest.h
+  NumberPlusOne.c
+
+
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  BaseLib
+  DebugLib
+  UnitTestLib
