@@ -8,7 +8,7 @@
 [Defines]
   INF_VERSION              = 0x00010006
   BASE_NAME                = ChefAppUnitTestSmm
-  FILE_GUID                = 389B16DB-F622-424C-9000-9E43C69CBF71
+  FILE_GUID                = 08184221-b69b-4abf-90ed-32c742c20c30
   MODULE_TYPE              = DXE_SMM_DRIVER
   VERSION_STRING           = 1.0
   PI_SPECIFICATION_VERSION = 0x0001000A

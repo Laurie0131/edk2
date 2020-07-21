@@ -8,7 +8,7 @@
 [Defines]
   INF_VERSION    = 0x00010006
   BASE_NAME      = ChefAppUnitTestUefiShell
-  FILE_GUID      = 9E8F461A-17E1-4312-B49C-E66F0A88EA8B
+  FILE_GUID      = 4aef2a44-eaa6-476f-a7b7-0677fd6aad69
   MODULE_TYPE    = UEFI_APPLICATION
   VERSION_STRING = 1.0
   ENTRY_POINT    = DxeEntryPoint
