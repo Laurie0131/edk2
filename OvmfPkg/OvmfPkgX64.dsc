@@ -916,7 +916,7 @@
       NULL|ShellPkg/Library/UefiShellLevel1CommandsLib/UefiShellLevel1CommandsLib.inf
 !if $(ADD_SHELL_STRING) == TRUE 
 	# Training Lib for build switch lab
-      NULL|ShellPkg/Library/UefiShellLevel3Commands_Training_Lib/UefiShellLevel3Commands_Training_Lib.inf
+      NULL|ShellPkg/Library/UefiShellLevel3CommandsLib_Training_Lib/UefiShellLevel3Commands_Training_Lib.inf
 !else
 	# normal Lib for build switch
       NULL|ShellPkg/Library/UefiShellLevel3CommandsLib/UefiShellLevel3CommandsLib.inf
